@@ -42,16 +42,3 @@ func CompactFilesToFolder(location string, newLocation string) error {
 	}
 	return nil
 }
-
-// func CreateDirectoryIfNotExists(path string) error {
-// 	if _, err := os.Stat(path); errors.Is(err, os.ErrNotExist) {
-// 		err := os.Mkdir(path, os.ModePerm)
-// 		if err != nil {
-// 			log.Fatal(err)
-
-// 			return err
-// 		}
-// 	}
-
-// 	return nil
-// }
