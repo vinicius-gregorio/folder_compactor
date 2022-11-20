@@ -13,6 +13,8 @@ builds:
       - linux
       - windows
       - darwin
+    dir: .
+    main: ./cmd
 archives:
   - replacements:
       darwin: Darwin
