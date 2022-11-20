@@ -1,15 +1,24 @@
 package main
 
-import "log"
-
-const (
-	LOCATION     = "C:/Users/Gregorio/Downloads/compactor_test"
-	NEW_LOCATION = "C:/Users/Gregorio/Downloads/compactor_test/compacted"
+import (
+	"flag"
+	"fmt"
+	"log"
+	"os"
 )
 
 func main() {
 
-	err := CompactFilesToFolder(LOCATION, NEW_LOCATION)
+	flag.Usage = func() {
+		fmt.Printf("Usage: %s [options] <csvFile>\nOptions:\n", os.Args[0])
+		flag.PrintDefaults()
+	}
+
+	userInput, err := getUserInputs()
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = CompactFilesToFolder(userInput.Location, userInput.NewLocation)
 	if err != nil {
 		log.Fatal(err)
 	}

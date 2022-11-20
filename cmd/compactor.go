@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"fmt"
 	"log"
 	"os"
 )
@@ -31,7 +30,6 @@ func CompactFilesToFolder(location string, newLocation string) error {
 	}
 
 	for _, v := range files {
-		fmt.Println(v.Name(), v.IsDir())
 		if !v.IsDir() {
 			err := os.Rename(location+"/"+v.Name(), newLocation+"/"+v.Name())
 			if err != nil {
