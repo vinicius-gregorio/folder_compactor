@@ -17,8 +17,6 @@ func getUserInputs() (UserInput, error) {
 		return UserInput{}, errors.New("a filepath argument is required")
 	}
 
-	separator := flag.String("separator", "comma", "Column separator")
-
 	flag.Parse()
 
 	fileLocation := flag.Arg(0)
@@ -26,10 +24,6 @@ func getUserInputs() (UserInput, error) {
 
 	fmt.Println("File location:", fileLocation)
 	fmt.Println("File location:", flag.Arg(1))
-
-	if !(*separator == "comma" || *separator == "semicolon") {
-		return UserInput{}, errors.New("only comma or semicolon separators are allowed")
-	}
 
 	return UserInput{fileLocation, fileNewLocation}, nil
 }

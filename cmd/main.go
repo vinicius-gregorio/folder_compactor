@@ -10,7 +10,7 @@ import (
 func main() {
 
 	flag.Usage = func() {
-		fmt.Printf("Usage: %s [options] <csvFile>\nOptions:\n", os.Args[0])
+		fmt.Printf("Usage: %s \n\n \t\t go run filesLocation newFilesLocation. \n\n Example: \t go run ./cmd C:/Users/USER/Downloads/compactor_test C:/Users/USER/Downloads/compactor_test/compacted", os.Args[0])
 		flag.PrintDefaults()
 	}
 
