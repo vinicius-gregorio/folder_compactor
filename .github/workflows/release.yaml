@@ -15,3 +15,4 @@ jobs:
         github_token: ${{ secrets.TOKEN }}
         goos: linux
         goarch: amd64
+        project_path: ./cmd
