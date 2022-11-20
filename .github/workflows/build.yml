@@ -19,7 +19,7 @@ jobs:
         go-version: 1.19
 
     - name: Build
-      run: go build -v ./compactor
+      run: go build -v ./cmd -o build
 
     - name: Test
-      run: go test -v ./compactor
+      run: go test -v ./cmd
